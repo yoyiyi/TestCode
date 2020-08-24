@@ -19,16 +19,16 @@ import com.yoyiyi.test.R
  */
 
 class MultilineTextView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+
     private val text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tristique urna tincidunt maximus viverra. Maecenas commodo pellentesque dolor ultrices porttitor. Vestibulum in arcu rhoncus, maximus ligula vel, consequat sem. Maecenas a quam libero. Praesent hendrerit ex lacus, ac feugiat nibh interdum et. Vestibulum in gravida neque. Morbi maximus scelerisque odio, vel pellentesque purus ultrices quis. Praesent eu turpis et metus venenatis maximus blandit sed magna. Sed imperdiet est semper urna laoreet congue. Praesent mattis magna sed est accumsan posuere. Morbi lobortis fermentum fringilla. Fusce sed ex tempus, venenatis odio ac, tempor metus."
     private val IMAGE_SIZE = 200.dp.toInt()
     private val IMAGE_PADDING = 50.dp
 
+    private val imgPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         .apply {
             textSize = 16.dp
         }
-
-    private val imgPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     override fun onDraw(canvas: Canvas) {
         canvas.drawBitmap(getAvatar(IMAGE_SIZE), (width - IMAGE_SIZE).toFloat(), IMAGE_PADDING, imgPaint)
@@ -45,11 +45,11 @@ class MultilineTextView(context: Context, attrs: AttributeSet?) : View(context, 
         while (start < text.length) {
             maxWidth = if (verticalOffset + fm.bottom < IMAGE_PADDING
                 || verticalOffset + fm.top > IMAGE_PADDING + IMAGE_SIZE
-            ) {
+            )
                 width.toFloat()
-            } else {
+            else
                 width.toFloat() - IMAGE_SIZE
-            }
+
             count = textPaint.breakText(text, start, text.length, true, maxWidth, measuredWidth)
             end = start + count
             canvas.drawText(text, start, end, 0f, verticalOffset, textPaint)
