@@ -18,12 +18,9 @@ class AvatarView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
     //头像的高
     private val IMAGE_WIDTH = 200.dp
     private val IMAGE_PADDING = 20.dp
-
     private val BG_WIDTH = 204.dp
     private val BG_PADDING = 18.dp
-
     private val xFermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
-
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val bgPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val bounds = RectF(
