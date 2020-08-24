@@ -23,18 +23,15 @@ class AvatarView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
     private val xFermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val bgPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+        .apply {
+            color = Color.RED
+        }
     private val bounds = RectF(
         IMAGE_PADDING,
         IMAGE_PADDING,
         IMAGE_PADDING + IMAGE_WIDTH,
         IMAGE_PADDING + IMAGE_WIDTH
     )
-
-    init {
-        bgPaint.apply {
-            color = Color.RED
-        }
-    }
 
     override fun onDraw(canvas: Canvas) {
         canvas.drawOval(
@@ -55,6 +52,9 @@ class AvatarView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         canvas.restoreToCount(count)
     }
 
+    /**
+     * 获取头像
+     */
     private fun getAvatar(width: Int): Bitmap {
         val options = BitmapFactory.Options()
         options.inJustDecodeBounds = true

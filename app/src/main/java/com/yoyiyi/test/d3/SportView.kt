@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import com.yoyiyi.ext.dp
 
@@ -18,12 +19,12 @@ import com.yoyiyi.ext.dp
 class SportView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val RING_COLOR = Color.GRAY
     private val HIGH_RING_COLOR = Color.RED
+    private val TEXT_COLOR = Color.GREEN
 
     private val RING_WIDTH = 20.dp
     private val ringPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val TextPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val RADIUS = 150.dp
-
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -34,7 +35,7 @@ class SportView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
         ringPaint.strokeWidth = RING_WIDTH
         canvas.drawCircle(width / 2f, height / 2f, RADIUS, ringPaint)
 
-        //1.画进度条
+        //2.画进度条
         ringPaint.color = HIGH_RING_COLOR
         ringPaint.strokeCap = Paint.Cap.ROUND
         canvas.drawArc(
@@ -47,6 +48,24 @@ class SportView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
             false,
             ringPaint
         )
+
+        //3.画文字
+        textPaint.color = TEXT_COLOR
+        textPaint.style = Paint.Style.FILL
+        textPaint.textSize = 100.dp
+        textPaint.textAlign = Paint.Align.CENTER
+        val fm = textPaint.fontMetrics
+        //ascent   -
+        //descent  +
+        //top      -
+        //bottom   +
+        Log.d(
+            "test44", "ascent:${fm.ascent}\n" +
+                    "descent${fm.descent}\n" +
+                    "top${fm.top}\n" +
+                    "bottom${fm.bottom}\n"
+        )
+        canvas.drawText("abab", width / 2f, height / 2f - (fm.ascent + fm.descent) / 2f, textPaint)
 
     }
 
