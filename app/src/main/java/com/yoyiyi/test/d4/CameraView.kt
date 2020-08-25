@@ -28,13 +28,32 @@ class CameraView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
     }
 
     override fun onDraw(canvas: Canvas) {
+        /* canvas.save()
+         canvas.clipRect(
+             (width - bitmap.width) / 2f,
+             (height - bitmap.width) / 2f,
+             (width - bitmap.width) / 2f + bitmap.width,
+             height / 2f
+         )
+         canvas.drawBitmap(bitmap, (width - bitmap.width) / 2f, (height - bitmap.width) / 2f, paint)
+         canvas.restore()
+
+         canvas.save()
+         canvas.clipRect(
+             (width - bitmap.width) / 2f,
+             height / 2f,
+             (width - bitmap.width) / 2f + bitmap.width,
+             (height - bitmap.height) / 2f + bitmap.height
+         )
+         canvas.drawBitmap(bitmap, (width - bitmap.width) / 2f, (height - bitmap.width) / 2f, paint)
+         canvas.restore()*/
         // 上半部分
         canvas.save()
         canvas.translate(BITMAP_PADDING + BITMAP_SIZE / 2, BITMAP_PADDING + BITMAP_SIZE / 2)
         canvas.rotate(-30f)
-        canvas.clipRect(- BITMAP_SIZE, - BITMAP_SIZE, BITMAP_SIZE, 0f)
+        canvas.clipRect(-BITMAP_SIZE, -BITMAP_SIZE, BITMAP_SIZE, 0f)
         canvas.rotate(30f)
-        canvas.translate(- (BITMAP_PADDING + BITMAP_SIZE / 2), - (BITMAP_PADDING + BITMAP_SIZE / 2))
+        canvas.translate(-(BITMAP_PADDING + BITMAP_SIZE / 2), -(BITMAP_PADDING + BITMAP_SIZE / 2))
         canvas.drawBitmap(bitmap, BITMAP_PADDING, BITMAP_PADDING, paint)
         canvas.restore()
 
@@ -43,9 +62,9 @@ class CameraView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         canvas.translate(BITMAP_PADDING + BITMAP_SIZE / 2, BITMAP_PADDING + BITMAP_SIZE / 2)
         canvas.rotate(-30f)
         camera.applyToCanvas(canvas)
-        canvas.clipRect(- BITMAP_SIZE, 0f, BITMAP_SIZE, BITMAP_SIZE)
+        canvas.clipRect(-BITMAP_SIZE, 0f, BITMAP_SIZE, BITMAP_SIZE)
         canvas.rotate(30f)
-        canvas.translate(- (BITMAP_PADDING + BITMAP_SIZE / 2), - (BITMAP_PADDING + BITMAP_SIZE / 2))
+        canvas.translate(-(BITMAP_PADDING + BITMAP_SIZE / 2), -(BITMAP_PADDING + BITMAP_SIZE / 2))
         canvas.drawBitmap(bitmap, BITMAP_PADDING, BITMAP_PADDING, paint)
         canvas.restore()
     }
