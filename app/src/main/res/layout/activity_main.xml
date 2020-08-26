@@ -8,18 +8,10 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <com.yoyiyi.test.d15.CircleView
+        android:id="@+id/cv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
-
-        <com.yoyiyi.test.d17.MaterialEditText
-            android:id="@+id/met"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="用户名"
-            app:useFloatingLabel="false"/>
-    </FrameLayout>
+        android:layout_height="match_parent"/>
 
     <!-- <View
          android:layout_width="match_parent"
