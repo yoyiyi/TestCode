@@ -8,15 +8,15 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <com.yoyiyi.test.d19.SquareImageView
-        android:layout_width="320dp"
-        android:layout_height="800dp"
-        android:src="@drawable/avatar"
+    <com.yoyiyi.test.d19.CircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent"/>
+    <!-- <View
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@color/colorAccent"/>-->
 
 </LinearLayout>
