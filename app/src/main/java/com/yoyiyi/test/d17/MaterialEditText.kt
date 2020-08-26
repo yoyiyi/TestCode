@@ -36,7 +36,7 @@ class MaterialEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
         ObjectAnimator.ofFloat(this, "floatingLabelFraction", 0f, 1f)
     }
 
-    private var useFloatingLabel = false
+    var useFloatingLabel = false
         set(value) {
             if (value != field) {
                 field = value
@@ -50,10 +50,10 @@ class MaterialEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
 
     override fun onTextChanged(text: CharSequence?, start: Int, lengthBefore: Int, lengthAfter: Int) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter)
-        if (floatingLabelShow && text.isNullOrEmpty()) {
+        if (floatingLabelShow && text.isNullOrEmpty() && useFloatingLabel) {
             floatingLabelShow = false
             animator.reverse()
-        } else if (!floatingLabelShow && !text.isNullOrEmpty()) {
+        } else if (!floatingLabelShow && !text.isNullOrEmpty() && useFloatingLabel) {
             floatingLabelShow = true
             animator.start()
         }
@@ -66,16 +66,18 @@ class MaterialEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
         paint.color = Color.GREEN
         //设置上 Padding 预留空间
 
-        val ta = context.obtainStyledAttributes(R.styleable.MaterialEditText)
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.MaterialEditText)
         useFloatingLabel = ta.getBoolean(R.styleable.MaterialEditText_useFloatingLabel, true)
         ta.recycle()
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        paint.alpha = (floatingLabelFraction * 0xff).toInt()
-        val currentVertivalValue = VERTICAL_OFFSET + EXTRA_VERTICAL_OFFSET * (1 - floatingLabelFraction)
-        canvas.drawText(hint.toString(), HORIZONTAL_OFFSET, currentVertivalValue, paint)
+        if (!useFloatingLabel) {
+            paint.alpha = (floatingLabelFraction * 0xff).toInt()
+            val currentVertivalValue = VERTICAL_OFFSET + EXTRA_VERTICAL_OFFSET * (1 - floatingLabelFraction)
+            canvas.drawText(hint.toString(), HORIZONTAL_OFFSET, currentVertivalValue, paint)
+        }
     }
 
 }
