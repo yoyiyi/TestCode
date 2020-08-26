@@ -25,6 +25,7 @@ class CircleView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val width = resolveSize(size, widthMeasureSpec)
         val height = resolveSize(size, heightMeasureSpec)
         setMeasuredDimension(width, height)
+
     }
 
     override fun onDraw(canvas: Canvas) {
