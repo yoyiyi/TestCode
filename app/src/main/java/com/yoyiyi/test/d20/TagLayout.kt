@@ -1,5 +1,6 @@
 package com.yoyiyi.test.d20
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
@@ -28,6 +29,7 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
     //行最大高度
     private var lineMaxHeight = 0
 
+    @SuppressLint("DrawAllocation")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -47,6 +49,7 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
             if (index >= childrenBounds.size) {
                 childrenBounds.add(Rect())
             }
+
             val childBound = childrenBounds[index]
             childBound.set(lineWidthUsed, heightUsed, lineWidthUsed + child.measuredWidth, heightUsed + child.measuredHeight)
 
