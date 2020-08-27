@@ -1,6 +1,5 @@
 package com.yoyiyi.test.d20
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
@@ -20,19 +19,17 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
 
     //子view位置
     private val childrenBounds = mutableListOf<Rect>()
-    //可用宽度
-    private var widthUsed = 0
-    //可用高度
-    private var heightUsed = 0
-    //行可用宽度
-    private var lineWidthUsed = 0
-    //行最大高度
-    private var lineMaxHeight = 0
 
-    @SuppressLint("DrawAllocation")
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        //可用宽度
+         var widthUsed = 0
+        //可用高度
+         var heightUsed = 0
+        //行可用宽度
+         var lineWidthUsed = 0
+        //行最大高度
+         var lineMaxHeight = 0
 
         val specWidthSize = MeasureSpec.getSize(widthMeasureSpec)
         val specWidthMode = MeasureSpec.getMode(widthMeasureSpec)

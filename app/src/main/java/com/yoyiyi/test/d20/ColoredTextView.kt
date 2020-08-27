@@ -20,7 +20,7 @@ private val COLORS = intArrayOf(
   Color.parseColor("#FF5722"),
   Color.parseColor("#795548")
 )
-private val TEXT_SIZES = intArrayOf(16, 16, 16)
+private val TEXT_SIZES = intArrayOf(10, 14, 18)
 private val CORNER_RADIUS = 4.dp
 private val X_PADDING = 16.dp.toInt()
 private val Y_PADDING = 8.dp.toInt()
