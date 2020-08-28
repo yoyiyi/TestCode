@@ -21,7 +21,12 @@ class PieView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
     private val RADIUS = 150.dp
     private val OFFSET = 20.dp
     private val ANGLES = floatArrayOf(60f, 90f, 150f, 60f)
-    private val COLORS = listOf(Color.parseColor("#C2185B"), Color.parseColor("#00ACC1"), Color.parseColor("#558B2F"), Color.parseColor("#5D4037"))
+    private val COLORS = listOf(
+        Color.parseColor("#C2185B"),
+        Color.parseColor("#00ACC1"),
+        Color.parseColor("#558B2F"),
+        Color.parseColor("#5D4037")
+    )
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
     }
