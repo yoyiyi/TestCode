@@ -22,13 +22,9 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
 
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        //可用宽度
          var widthUsed = 0
-        //可用高度
          var heightUsed = 0
-        //行可用宽度
          var lineWidthUsed = 0
-        //行最大高度
          var lineMaxHeight = 0
 
         val specWidthSize = MeasureSpec.getSize(widthMeasureSpec)
