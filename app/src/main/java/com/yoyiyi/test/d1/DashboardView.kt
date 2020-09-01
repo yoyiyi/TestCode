@@ -36,6 +36,7 @@ class DashboardView(context: Context, attrs: AttributeSet?) : View(context, attr
         dashPaint.style = Paint.Style.STROKE
         dashPaint.color = Color.RED
 
+
         dashPath.addRect(0f, 0f, DASH_WIDTH, DASH_LENGTH, Path.Direction.CCW)
 
     }
