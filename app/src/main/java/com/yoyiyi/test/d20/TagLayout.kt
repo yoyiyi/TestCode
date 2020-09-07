@@ -31,6 +31,7 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
         val specWidthSize = MeasureSpec.getSize(widthMeasureSpec)
         val specWidthMode = MeasureSpec.getMode(widthMeasureSpec)
 
+
         children.forEachIndexed { index, child ->
             measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
             if (specWidthMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth > specWidthSize) { //换行操作
