@@ -16,3 +16,6 @@ sHandler是一个静态的Handler对象 必须在主线程
 1.6 之前 串行
 1.6-3.0  并行
 3.0 之后 串行
+
+
+## 5.onSaveInstanceState() 与 onRestoreIntanceState()
