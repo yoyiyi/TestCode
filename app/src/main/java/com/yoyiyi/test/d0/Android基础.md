@@ -19,3 +19,4 @@ sHandler是一个静态的Handler对象 必须在主线程
 
 
 ## 5.onSaveInstanceState() 与 onRestoreIntanceState()
+
