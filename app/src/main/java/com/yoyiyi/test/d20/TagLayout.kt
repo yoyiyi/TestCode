@@ -41,6 +41,7 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
                 measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
             }
 
+
             if (index >= childrenBounds.size) {
                 childrenBounds.add(Rect())
             }
