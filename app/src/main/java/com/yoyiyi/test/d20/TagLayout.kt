@@ -46,6 +46,7 @@ class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(conte
             if (index >= childrenBounds.size) {
                 childrenBounds.add(Rect())
 
+
             }
 
             val childBound = childrenBounds[index]
