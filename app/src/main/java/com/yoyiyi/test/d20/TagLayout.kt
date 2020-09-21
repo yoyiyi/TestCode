@@ -17,6 +17,7 @@ import kotlin.math.max
 class TagLayout(context: Context, attributeSet: AttributeSet?) : ViewGroup(context, attributeSet) {
 
 
+
     //子view位置
     private val childrenBounds = mutableListOf<Rect>()
 
