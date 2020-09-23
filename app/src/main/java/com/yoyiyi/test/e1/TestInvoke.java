@@ -1,9 +1,5 @@
 package com.yoyiyi.test.e1;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
 /**
  * @author zzq  作者 E-mail:   soleilyoyiyi@gmail.com
  * @date 创建时间：2020/9/9 23:20
@@ -11,7 +7,8 @@ import java.lang.reflect.Proxy;
  */
 public class TestInvoke {
     public static void main(String[] args) {
-        final Man man = new Man();
+
+        /*final Man man = new Man();
         final Person person = (Person) Proxy.newProxyInstance(man.getClass().getClassLoader(), man.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -27,6 +24,6 @@ public class TestInvoke {
             }
         });
         person.eat();
-        person.play("篮球");
+        person.play("篮球");*/
     }
 }
