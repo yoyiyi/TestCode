@@ -36,11 +36,12 @@ fun main(args: Array<String>) {
        var result =  async.await()
         println("${result}")
     }
+
     Thread.sleep(1000)*/
 
     /*runBlocking {
-        delay(1000)
-        println("test")
+        delay(1000) 一定场
+        println("test") 场
     }*/
 
 

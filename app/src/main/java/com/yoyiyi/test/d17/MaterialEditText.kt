@@ -26,6 +26,7 @@ class MaterialEditText(context: Context, attrs: AttributeSet) : AppCompatEditTex
     private val EXTRA_VERTICAL_OFFSET = 16.dp
     private var floatingLabelShow = false
 
+
     var floatingLabelFraction = 0f
         set(value) {
             field = value

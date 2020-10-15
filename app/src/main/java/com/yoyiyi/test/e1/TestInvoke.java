@@ -7,7 +7,6 @@ package com.yoyiyi.test.e1;
  */
 public class TestInvoke {
     public static void main(String[] args) {
-
         /*final Man man = new Man();
         final Person person = (Person) Proxy.newProxyInstance(man.getClass().getClassLoader(), man.getClass().getInterfaces(), new InvocationHandler() {
             @Override
